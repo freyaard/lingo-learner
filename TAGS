@@ -1,0 +1,59 @@
+
+app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer1,0
+
+app/models/word.rb,40
+class Word < ApplicationRecordWord1,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord1,0
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob1,0
+
+app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController1,0
+
+app/controllers/words_controller.rb,294
+class WordsController < ApplicationControllerWordsController1,0
+  def indexindex5,0
+  def showshow10,0
+  def newnew14,0
+  def editedit19,0
+  def createcreate23,0
+  def updateupdate38,0
+  def destroydestroy51,0
+    def set_wordset_word62,0
+    def word_paramsword_params67,0
+
+app/helpers/words_helper.rb,35
+module WordsHelperWordsHelper1,0
+
+app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper1,0
+
+test/models/word_test.rb,54
+class WordTest < ActiveSupport::TestCaseWordTest3,0
+
+test/system/words_test.rb,58
+class WordsTest < ApplicationSystemTestCaseWordsTest3,0
+
+test/application_system_test_case.rb,95
+class ApplicationSystemTestCase < ActionDispatch::SystemTestCaseApplicationSystemTestCase3,0
+
+test/test_helper.rb,114
+module ActiveSupportActiveSupport5,0
+  class TestCaseTestCase6,0
+  class TestCaseActiveSupport::TestCase6,0
+
+test/controllers/words_controller_test.rb,84
+class WordsControllerTest < ActionDispatch::IntegrationTestWordsControllerTest3,0
+
+config/application.rb,161
+module LingoRailsLingoRails9,0
+  class Application < Rails::ApplicationApplication10,0
+  class Application < Rails::ApplicationLingoRails::Application10,0
+
+db/migrate/20250420090036_create_words.rb,89
+class CreateWords < ActiveRecord::Migration[8.0]CreateWords1,0
+  def changechange2,0

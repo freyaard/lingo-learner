@@ -1,0 +1,52 @@
+<%= form_with(model: word, class: "contents") do |form| %>
+  <% if word.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% word.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :word_in_language_a %>
+    <%= form.text_field :word_in_language_a, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:word_in_language_a].none?, "border-red-400 focus:outline-red-600": word.errors[:word_in_language_a].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :word_in_language_b %>
+    <%= form.text_field :word_in_language_b, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:word_in_language_b].none?, "border-red-400 focus:outline-red-600": word.errors[:word_in_language_b].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :type_of_word %>
+    <%= form.text_field :type_of_word, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:type_of_word].none?, "border-red-400 focus:outline-red-600": word.errors[:type_of_word].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :past_tense %>
+    <%= form.text_field :past_tense, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:past_tense].none?, "border-red-400 focus:outline-red-600": word.errors[:past_tense].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :times_correct_language_a %>
+    <%= form.number_field :times_correct_language_a, value: 0, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:times_correct_language_a].none?, "border-red-400 focus:outline-red-600": word.errors[:times_correct_language_a].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :times_correct_language_b %>
+    <%= form.number_field :times_correct_language_b, value: 0, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:times_correct_language_b].none?, "border-red-400 focus:outline-red-600": word.errors[:times_correct_language_b].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :notes %>
+    <%= form.text_field :notes, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": word.errors[:notes].none?, "border-red-400 focus:outline-red-600": word.errors[:notes].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
