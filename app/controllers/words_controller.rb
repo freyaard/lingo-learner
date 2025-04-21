@@ -22,6 +22,8 @@ class WordsController < ApplicationController
   # POST /words or /words.json
   def create
     @word = Word.new(word_params)
+    current_user = User.find_by_id(session[:user_id])
+    @word.user_id = current_user.uid
 
     respond_to do |format|
       if @word.save
